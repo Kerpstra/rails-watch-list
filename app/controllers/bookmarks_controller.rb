@@ -1,5 +1,5 @@
 class BookmarksController < ApplicationController
-  before_action :set_list, except: :destroy
+  before_action :set_list, except: %i[destroy]
   before_action :set_bookmark, only: :destroy
 
   def new

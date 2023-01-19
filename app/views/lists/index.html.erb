@@ -1,12 +1,22 @@
-<h1>Lists</h1>
+<%= render 'banner' %>
 
-<ul><% @lists.each do |list| %>
-<li><%= link_to list.name, list_path(list) %></li>
-<% end %>
-</ul>
 
-<p><strong>Want to add a new list?</strong></p>
-<%= link_to 'Create a Movie list', new_list_path %>
+<div class="container mx-5 mt-5">
+  <h2>My lists</h2>
+  <p>Your favorite movies, saved in your own list categories.
+  Select a category to see or change the movies on your watchlist.</p>
 
-<p><strong>Want to bookmark a movie?</strong></p>
-<%# <%= link_to 'Bookmark a movie', new_list_bookmark_path %> %>
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+        <%= link_to list.name, list_path(list) %>
+      </div>
+    <% end %>
+  </div>
+
+
+  <div class="mt-3 mb-5">
+    <%= link_to 'Create new Movie list', new_list_path, class: 'btn btn-gradient' %>
+  </div>
+
+</div>

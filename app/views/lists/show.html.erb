@@ -1,5 +1,31 @@
-<h1> <%= @list.name %> List</h1>
+<%= render 'banner' %>
 
-<P>Details about your list will follow</P>
 
-<%= link_to 'Back to all lists', lists_path %>
+<div class="container mx-5 mt-5">
+  <h2><%= @list.name %></h2>
+  <p>Let's see what's on your list:</p>
+
+  <div class="cards">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="card-trip">
+        <img src="<%= bookmark.movie.poster_url %>" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= bookmark.movie.title%></h2>
+              <p><%= bookmark.comment %></p>
+            </div>
+            <h2 class="card-trip-pricing"><i class="fa-regular fa-star"></i><%= bookmark.movie.rating %></h2>
+          </div>
+          <div class="mx-3 mb-1">
+           <%= link_to 'Remove from list', bookmark, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+          </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="mt-3 mb-5">
+   <%= link_to 'Add movie to list', new_list_bookmark_path(@list.id), class: 'btn btn-gradient' %>
+       <%= link_to 'Back to homepage', lists_path, class: 'btn btn-gradient' %>
+  </div>
+
+</div>
