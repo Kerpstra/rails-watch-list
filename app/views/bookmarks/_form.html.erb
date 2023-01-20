@@ -1,3 +1,5 @@
+<h2>Add a movie to this list</h2>
+
 <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -13,6 +15,3 @@
 
   </div>
 <% end %>
-
-<BR><BR>
-<%= link_to 'Back to the lists', lists_path %>

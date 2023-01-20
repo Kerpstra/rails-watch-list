@@ -23,8 +23,12 @@
     <% end %>
   </div>
 
+  <p><BR><BR>
+  <!-- Also check the show action in the controller and add @list of @bookmark  -->
+   <%= render 'bookmarks/form' %></p>
+
   <div class="mt-3 mb-5">
-   <%= link_to 'Add movie to list', new_list_bookmark_path(@list.id), class: 'btn btn-gradient' %>
+   <%# <%= link_to 'Add movie to list', new_list_bookmark_path(@list.id), class: 'btn btn-gradient' %>
        <%= link_to 'Back to homepage', lists_path, class: 'btn btn-gradient' %>
   </div>
 
