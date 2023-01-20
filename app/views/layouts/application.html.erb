@@ -11,7 +11,7 @@
   </head>
 
   <body>
-  <%= render 'banner' %>
+  <%= render 'banner' unless controller_name == 'lists' && action_name == 'show' %>
     <%# <div class="container mt-5"> %>
       <%= yield %>
     <%# </div> %>

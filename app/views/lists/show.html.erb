@@ -1,5 +1,12 @@
+<% if @list.photo.attached? %>
+  <%= render 'banner_showpage' %>
+<% else %>
+  <%= render 'banner' %>
+<% end %>
+
 <div class="container mx-5 mt-5">
   <h2><%= @list.name %></h2>
+
   <p>Let's see what's on your list:</p>
 
   <div class="cards">
