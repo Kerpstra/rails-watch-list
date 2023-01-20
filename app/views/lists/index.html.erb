@@ -1,18 +1,9 @@
-<%= render 'banner' %>
-
-
 <div class="container mx-5 mt-5">
   <h2>My lists</h2>
   <p>Your favorite movies, saved in your own list categories.
   Select a category to see or change the movies on your watchlist.</p>
 
-  <div class="cards">
-    <% @lists.each do |list| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
-        <%= link_to list.name, list_path(list) %>
-      </div>
-    <% end %>
-  </div>
+  <%= render 'lists' %>
 
    <div class="mt-3 mb-5">
     <%= link_to 'Create new Movie list', new_list_path, class: 'btn btn-gradient' %>
